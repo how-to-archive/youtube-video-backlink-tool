@@ -31,3 +31,81 @@ No automation, no hidden iframe calls, and no background requests.
 ---
 
 ## Project Structure
+
+
+/index.html
+/backlink-generator.js
+/youtube-backlink-templates.json
+
+
+---
+
+## How It Works
+
+1. User enters a YouTube video URL
+2. The script extracts the video ID
+3. Templates from `youtube-backlink-templates.json` are shuffled
+4. Templates are populated with the video ID
+5. Backlinks are rendered as clickable links
+6. User can download the list or archive the original video URL
+
+---
+
+## Example Input
+
+
+https://www.youtube.com/watch?v=VIDEO_ID
+
+
+---
+
+## Example Output
+
+
+https://example1.com/?video=VIDEO_ID
+
+https://example2.com/embed/VIDEO_ID
+
+https://example3.com/watch?v=VIDEO_ID
+
+...
+
+
+---
+
+## Deployment
+
+You can host this easily using:
+
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting provider
+
+To use GitHub Pages:
+
+1. Upload files to repository
+2. Go to **Settings → Pages**
+3. Select the branch
+4. Save
+
+Your tool will be live at:
+
+
+https://how-to-archive.github.io/youtube-backlink-generator/
+
+
+---
+
+## License
+
+MIT License
+
+---
+
+## Disclaimer
+
+This tool only generates URLs based on templates.  
+It does not automatically submit, ping, iframe-load, or manipulate third-party services.
+
+Users are responsible for how they use generated links.
