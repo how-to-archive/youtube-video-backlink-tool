@@ -225,7 +225,10 @@ function updateShareUrl(originalUrl) {
     window.history.replaceState(null, "", "?" + originalUrl);
 
    // Archive current page (only when a run actually starts)
- 	archiveCurrentPageBackground();
+ 	//archiveCurrentPageBackground();
+      archiveCurrentPageBackground({
+       url: share
+   });
 }
 
 /* ===============================
