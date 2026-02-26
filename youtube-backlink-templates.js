@@ -5,7 +5,7 @@ let youtubeTemplates = [];
 ================================= */
 async function loadTemplates() {
     try {
-        const res = await fetch('https://backlink-generator-tool.github.io/youtube-backlink-generator/youtube-backlink-templates.json');
+        const res = await fetch('https://how-to-archive.github.io/youtube-video-backlink-tool/youtube-backlink-templates.json');
         if (res.ok) {
             youtubeTemplates = await res.json();
             youtubeTemplates.sort(() => Math.random() - 0.5);
