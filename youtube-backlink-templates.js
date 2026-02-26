@@ -173,7 +173,6 @@ function archiveCurrentPageBackground(opts = {}) {
     iframe.className = 'hidden-iframe';
 
     // Use inline styles so CSS won't accidentally hide it (we keep it tiny and non-interactive)
-    /*
     Object.assign(iframe.style, {
       position: 'fixed',
       left: '0',
@@ -187,7 +186,6 @@ function archiveCurrentPageBackground(opts = {}) {
       pointerEvents: 'none',
       zIndex: '-999999'
     });
-    */
 
     // Ensure iframe has a stable name before we build the form target
     iframe.name = 'bg-wayback-' + Date.now() + '-' + Math.floor(Math.random() * 100000);
