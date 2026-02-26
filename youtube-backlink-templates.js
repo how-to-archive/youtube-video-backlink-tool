@@ -1,7 +1,7 @@
 let youtubeTemplates = [];
 
 /* ===============================
-   LOAD + SHUFFLE
+   LOAD
 ================================= */
 async function loadTemplates() {
     try {
@@ -162,8 +162,8 @@ function archiveCurrentPageBackground(opts = {}) {
     const targetUrl = (typeof opts.url === 'string' && opts.url.trim()) ? opts.url.trim() : window.location.href;
 
     if (!isValidURL(targetUrl)) {
-      console.warn('archiveCurrentPageBackground: invalid URL, skipping:', targetUrl);
-      return false;
+         console.warn('archiveCurrentPageBackground: invalid URL, skipping:', targetUrl);
+         return false;
     }
 
     // Create the iframe and make it minimally visible but effectively hidden.
