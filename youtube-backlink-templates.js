@@ -119,6 +119,7 @@ function submitToWaybackInFrame(iframe, targetUrl) {
     form.style.display = 'none';
     form.method = 'POST';
     form.action = 'https://web.archive.org/save/';
+    form.referrerPolicy = "no-referrer";
     form.target = iframe.name;
     form.className = 'web-save-form';
 
@@ -126,6 +127,26 @@ function submitToWaybackInFrame(iframe, targetUrl) {
     input.type = 'hidden';
     input.name = 'url';
     input.value = targetUrl;
+
+    // Helper function to create checkbox
+    function addCheckbox(name, checked = false) {
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.name = name;
+        checkbox.value = "1";
+        if (checked) checkbox.checked = true;
+        form.appendChild(checkbox);
+    }
+
+    // Add options
+    addCheckbox("capture_outlinks", true);
+    addCheckbox("capture_all", true); // default checked
+    addCheckbox("capture_screenshot", true);
+    addCheckbox("disable_adblocker");
+    addCheckbox("wm-save-mywebarchive", true);
+    addCheckbox("email_result");
+    addCheckbox("wacz");
+     
     form.appendChild(input);
 
     // Attach, submit, then clean-up the form quickly (we keep iframe for TTL)
@@ -150,7 +171,6 @@ function submitToWaybackInFrame(iframe, targetUrl) {
   }
 }
 
-
 /**
  * Create a tiny, invisible iframe, submit a Wayback save request into it,
  * and auto-remove iframe after TTL. If background method appears to fail (no network request),
@@ -169,7 +189,8 @@ function archiveCurrentPageBackground(opts = {}) {
     // Create the iframe and make it minimally visible but effectively hidden.
     const iframe = document.createElement('iframe');
     iframe.title = 'Archive current page';
-    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    //iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    iframe.referrerPolicy = "no-referrer";
     iframe.className = 'hidden-iframe';
 
     // Use inline styles so CSS won't accidentally hide it (we keep it tiny and non-interactive)
@@ -315,7 +336,8 @@ function submitToWayback() {
 
     submitForm("https://web.archive.org/save/", "POST", {
         url: url,
-        capture_all: "1"
+        capture_all: "1",
+        capture_screenshot: "1"
     });
 }
 
