@@ -54,7 +54,7 @@ No automation, no hidden iframe calls, and no background requests.
 ## Example Input
 
 
-https://www.youtube.com/watch?v=VIDEO_ID
+[https://www.youtube.com/watch?v=Zpy1tCC2XrA](https://www.youtube.com/watch?v=Zpy1tCC2XrA)
 
 
 ---
@@ -62,11 +62,11 @@ https://www.youtube.com/watch?v=VIDEO_ID
 ## Example Output
 
 
-https://example1.com/?video=VIDEO_ID
+https://heartvod.com/play=Zpy1tCC2XrA
 
-https://example2.com/embed/VIDEO_ID
+https://videogg.com/watch?v=Zpy1tCC2XrA
 
-https://example3.com/watch?v=VIDEO_ID
+https://www.nsfwyoutube.com/watch?v=Zpy1tCC2XrA
 
 ...
 
@@ -92,7 +92,7 @@ To use GitHub Pages:
 Your tool will be live at:
 
 
-https://how-to-archive.github.io/youtube-backlink-generator/
+[https://how-to-archive.github.io/youtube-backlink-generator/](https://how-to-archive.github.io/youtube-video-backlink-tool/)
 
 
 ---
