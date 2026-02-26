@@ -8,7 +8,6 @@ async function loadTemplates() {
         const res = await fetch('https://how-to-archive.github.io/youtube-video-backlink-tool/youtube-backlink-templates.json');
         if (res.ok) {
             youtubeTemplates = await res.json();
-            youtubeTemplates.sort(() => Math.random() - 0.5);
         }
     } catch (e) {
         console.error("Template load error:", e);
@@ -40,6 +39,7 @@ function extractYouTubeID(url) {
    GENERATE LINKS
 ================================= */
 function generateBacklinks(videoID) {
+    youtubeTemplates.sort(() => Math.random() - 0.5);
     return youtubeTemplates
         .map(tpl => tpl.replace(/\{\{ID\}\}/g, videoID))
         .filter(Boolean);
