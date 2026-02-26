@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>YouTube Backlink Generator</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 8px 14px;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+
+        li {
+            word-break: break-all;
+            font-size: 14px;
+            margin-bottom: 6px;
+        }
+
+        a {
+            color: #1a73e8;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #shareBox {
+            margin-top: 15px;
+        }
+
+        #archiveButtons {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>YouTube Backlink Generator</h2>
+
+<input id="urlInput" type="text" placeholder="Enter YouTube Video URL">
+
+<button id="startBtn">Generate Backlinks</button>
+<button id="downloadBtn">Download URLs</button>
+
+<div id="shareBox">
+    <input id="newUrl" type="text" readonly placeholder="Shareable URL appears here…">
+    <button id="copyBtn">Copy</button>
+</div>
+
+<div id="archiveButtons"></div>
+
+<ul id="results"></ul>
+
+<script src="https://backlink-generator-tool.github.io/youtube-backlink-generator/youtube-backlink-templates.js"></script>
+
+</body>
+</html>
